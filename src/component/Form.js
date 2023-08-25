@@ -1,30 +1,16 @@
 import React from "react";
 
-// export default function EntryForm({ onAddEntry }) {
-// function handleSubmit(event) {
-//     event.preventDefault();
-//     const formData = new FormData(event.target);
-//     const data = Object.fromEntries(formData);
-//     onAddEntry(data);
-// }
-
 export default function Form({ onAddActivity }) {
   function handleSubmit(event) {
     event.preventDefault();
 
     const newActivity = {
       name: event.target.elements.activityName.value,
-      isGoodWeather: event.target.elements.isGoodWeather.checked,
+      isGoodWeather: event.target.elements.weatherCheckbox.checked,
     };
 
     onAddActivity(newActivity);
 
-    /*  const newActivity = {
-      name: "activityName",
-      isForGoodWeather: "weatherCheckbox.checked",
-    }; */
-
-    //onAddActivity(newActivity);
     event.target.reset();
   }
   return (
@@ -39,11 +25,7 @@ export default function Form({ onAddActivity }) {
             </li>
             <li>
               <label htmlFor="weatherCheckbox">Weather Checkbox:</label>
-              <input
-                type="checkbox"
-                name="weatherCheckbox"
-                //checked={isForGoodWeather}
-              ></input>
+              <input type="checkbox" name="weatherCheckbox"></input>
             </li>
             <li>
               <button type="submit"> submit</button>
