@@ -11,9 +11,11 @@ export default function Form({ onAddActivity }) {
   //preventDefault()
   return (
     <>
-      <h1>heading</h1>
-      <input type="text">name of activity</input>
-      <input type="checkbox">weather checkbox</input>
+      <h1>Weather App</h1>
+      <label htmlFor="activityName">Activity Name:</label>
+      <input type="text" name="activityName"></input>
+      <label htmlFor="weatherCheckbox">Weather Checkbox:</label>
+      <input type="checkbox" name="weatherCheckbox"></input>
       <button type="submit"> submit</button>
     </>
   );
