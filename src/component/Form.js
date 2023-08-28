@@ -24,7 +24,7 @@ export default function Form({ onAddActivity }) {
               <input id="activityName" type="text" name="activityName"></input>
             </li>
             <li>
-              <label htmlFor="weatherCheckbox">Weather Checkbox:</label>
+              <label htmlFor="weatherCheckbox">Is good Weather?</label>
               <input type="checkbox" name="weatherCheckbox"></input>
             </li>
             <li>

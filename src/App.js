@@ -12,6 +12,7 @@ function App() {
   });
   const [isGoodWeather, setIsGoodWeather] = useState();
   console.log(isGoodWeather);
+
   useEffect(() => {
     async function fetchWeather() {
       const response = await fetch(
@@ -30,6 +31,14 @@ function App() {
       : !oneActivity.isForGoodWeather;
   });
 
+  function handleDeleteActivity(id) {
+    const updatedActivites = activities.filter(
+      (_oneActivity) => _oneActivity.id !== id
+    );
+
+    setActivities(updatedActivites);
+  }
+
   function handleAddActivity(oneActivity) {
     setActivities([{ id: uid(), ...oneActivity }, ...activities]);
   }
@@ -41,7 +50,11 @@ function App() {
       </h1>
       <main>
         <Form onAddActivity={handleAddActivity} />
-        <List isGoodWeather={isGoodWeather} activities={filteredActivities} />
+        <List
+          onDeleteActivity={handleDeleteActivity}
+          isGoodWeather={isGoodWeather}
+          activities={filteredActivities}
+        />
       </main>
     </>
   );
