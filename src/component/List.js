@@ -1,32 +1,18 @@
 import React from "react";
 
-export default function List({ activities }) {
+export default function List({ isGoodWeather, activities }) {
   return (
-    <ul>
-      {activities.map((oneActivity) => {
-        return <li key={oneActivity.id}>{oneActivity.name}</li>;
-      })}
-    </ul>
+    <>
+      <h1>
+        {isGoodWeather
+          ? "The weather is awesome! Go outside and:"
+          : "Bad weather outside! Here´s what you can do now: "}
+      </h1>
+      <ul>
+        {activities.map((oneActivity) => {
+          return <li key={oneActivity.id}>{oneActivity.name}</li>;
+        })}
+      </ul>
+    </>
   );
 }
-
-/* return (
-    <ul className="list">
-      {todos.map((todo) => {
-        return (
-          <li className="list__item" key={todo.id}>
-            <input
-              type="checkbox"
-              checked={todo.isChecked}
-              onChange={() => {
-                onToggleCheckTodo(todo.id);
-              }}
-            />
-            <span
-              style={{
-                textDecoration: todo.isChecked ? "line-through" : "none",
-              }}
-            >
-              {todo.title}
-            </span>
-          </li> */

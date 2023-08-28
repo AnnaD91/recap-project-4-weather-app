@@ -6,7 +6,7 @@ export default function Form({ onAddActivity }) {
 
     const newActivity = {
       name: event.target.elements.activityName.value,
-      isGoodWeather: event.target.elements.weatherCheckbox.checked,
+      isForGoodWeather: event.target.elements.weatherCheckbox.checked,
     };
 
     onAddActivity(newActivity);
